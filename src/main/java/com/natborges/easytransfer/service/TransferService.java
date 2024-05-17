@@ -1,5 +1,6 @@
 package com.natborges.easytransfer.service;
 
+import com.natborges.easytransfer.constants.TransferStatusEnum;
 import com.natborges.easytransfer.dto.CreateTransferDto;
 import com.natborges.easytransfer.entity.AccountEntity;
 import com.natborges.easytransfer.entity.TransferEntity;
@@ -65,6 +66,8 @@ public class TransferService {
         if (successToTransferValues.equals(false)) {
             return null;
         }
+
+        transfer.setStatus(TransferStatusEnum.SCHEDULED);
 
         return transferRepository.save(transfer);
     }

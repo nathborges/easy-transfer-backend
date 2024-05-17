@@ -27,11 +27,11 @@ public class TransferController {
     }
 
     @PostMapping()
-    public ResponseEntity<String> create(@RequestBody CreateTransferDto transferDto){
+    public ResponseEntity<Object> create(@RequestBody CreateTransferDto transferDto){
         TransferEntity transferCreated = service.create(transferDto);
 
         if (transferCreated != null ) {
-            return ResponseEntity.status(HttpStatus.OK).body(transferCreated.toString());
+            return ResponseEntity.status(HttpStatus.OK).body(transferCreated);
         }
         return ResponseEntity.internalServerError().body("Error to created, check the recipient and sender data.");
     }
