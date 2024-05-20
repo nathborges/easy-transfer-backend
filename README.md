@@ -1,6 +1,8 @@
 # EasyTransferBackend
 EasyTransfer é uma aplicação de demonstração de um serviço que facilita transferências de valores para contas.
 
+Link do frontend: https://github.com/nathborges/easy-transfer-frontend
+
 ## Pré-requisitos
 Antes de começar, certifique-se de ter o seguinte instalado:
 
