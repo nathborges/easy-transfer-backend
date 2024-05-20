@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/account")
+// @TODO: put frontend default url
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class AccountController {
 
     @Autowired
@@ -28,6 +30,11 @@ public class AccountController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<AccountEntity> getById(@PathVariable Long id){
         return ResponseEntity.ok(service.findById(id));
+    }
+
+    @GetMapping(value = "/cpf/{cpf}")
+    public ResponseEntity<AccountEntity> getByCpf(@PathVariable String cpf){
+        return ResponseEntity.ok(service.findByUserCpf(cpf));
     }
 
     @PostMapping()

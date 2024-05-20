@@ -1,7 +1,6 @@
 package com.natborges.easytransfer.controller;
 
 import com.natborges.easytransfer.dto.CreateTransferDto;
-import com.natborges.easytransfer.entity.AccountEntity;
 import com.natborges.easytransfer.entity.TransferEntity;
 import com.natborges.easytransfer.service.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/transfer")
+// @TODO: put frontend default url
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class TransferController {
 
     @Autowired
